@@ -1,0 +1,131 @@
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; 
+}
+
+
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; 
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E40AF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body{
+  scroll-behavior: smooth;
+}
+.animated-link {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+ 
+  
+  .animated-link span {
+    animation: changeTypes 2s linear infinite;
+  }
+  
+
+  @keyframes shine {
+    0% {
+      left: -100px;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  .shine-div::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    animation: shine 5s infinite linear;
+  }
+  
+  .shine-div {
+    position: relative;
+    background-color: #0055d4;
+    color: white;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+  
+
+
+  @keyframes shinebtn {
+    0% {
+      background-position: -200%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+  
+  .shine {
+    background: linear-gradient(
+      -120deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 50%
+    ); 
+    background-size: 200% auto;
+    background-color: #0055d4;
+    animation: shinebtn 2s linear infinite;
+  }
+  
+  .shining-border {
+    position: relative;
+    border-bottom: 1px solid #4f46e5;
+    overflow: hidden;
+  }
+  
+  .shining-border::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+    animation: shineborder 2s infinite;
+  }
+  
+  @keyframes shineborder {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  .rs-picker-check-menu {
+    width: 250px !important;
+  }
+  

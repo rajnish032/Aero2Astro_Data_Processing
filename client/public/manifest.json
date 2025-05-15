@@ -1,0 +1,41 @@
+{
+    "name": "Aero2Astro",
+    "short_name": "Aero2Astro",
+    "description": "All in one place to manage your profile for gis equipment like YOU",
+    "start_url": "/",
+    "theme_color": "#000000",
+    "background_color": "#00000",
+    "icons": [
+      {
+        "purpose": "maskable",
+        "sizes": "512x512",
+        "src": "icon512_maskable.png",
+        "type": "image/png"
+      },
+      {
+        "purpose": "any",
+        "sizes": "512x512",
+        "src": "icon512_rounded.png",
+        "type": "image/png"
+      }
+    ],
+    "orientation": "any",
+    "display": "standalone",
+    "dir": "auto",
+    "lang": "en-US",
+    "screenshots": [
+      {
+        "src": "/screenshots/homepage-wide.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "form_factor": "wide"
+      },
+      {
+        "src": "/screenshots/homepage-narrow.png",
+        "sizes": "720x1280",
+        "type": "image/png",
+        "form_factor": "narrow"
+      }
+    ]
+  }
+  

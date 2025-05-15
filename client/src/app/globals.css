@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '~react-toastify/dist/ReactToastify.min.css';
+
+/*--------- Leaflet styles ---------*/
+.map-tile-layer {
+    z-index: 1 !important;
+  }
+  
+  .leaflet-control {
+    z-index: 1000 !important;
+  }
+  
+  .leaflet-popup {
+    z-index: 1001 !important;
+  }
+  
+  .leaflet-marker-icon {
+    z-index: 1002 !important;
+  }
+  
+  .leaflet-marker-shadow {
+    z-index: 1000 !important;
+  }
+  /* -------------------------- */
+  .hideScrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hideScrollbar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+  }

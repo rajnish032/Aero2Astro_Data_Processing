@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /gis/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Allow: /
+
+Sitemap: https://dronepilots.aero2astro.com/sitemap.xml
