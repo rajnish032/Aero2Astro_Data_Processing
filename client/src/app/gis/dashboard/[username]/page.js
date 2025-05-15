@@ -1,5 +1,5 @@
 import Header from "@/components/commons/Header";
-import Dashboard from "@/components/GisDashboard/Dashboard";
+import Dashboard from "@/components/GisDashboard/Dashboard.js";
 import GisSideBar from "@/components/commons/GisSideBar";
 
 export default function Page({ params }) {
