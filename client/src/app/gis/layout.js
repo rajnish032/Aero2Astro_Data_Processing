@@ -8,7 +8,7 @@ const cookies = new Cookies(null, { path: "/" });
 import { verifyGisAuth } from "@/utils/verifyauth";
 import { getAllProj } from "@/routes/gisProj";
 import { getAllLog } from "@/routes/gisLog";
-const gisLayout = ({ children }) => {
+const GisLayout = ({ children }) => {
   const [currentUser, setCurrentUser] = useRecoilState(gisData);
   const [proj, setProj] = useRecoilState(gisProject);
   const [logs, setLogs] = useRecoilState(logData);
@@ -32,4 +32,4 @@ const gisLayout = ({ children }) => {
   return <>{children}</>;
 };
 
-export default gisLayout;
+export default GisLayout;
