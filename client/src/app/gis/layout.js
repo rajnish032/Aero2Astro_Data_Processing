@@ -15,12 +15,25 @@ const GisLayout = ({ children }) => {
   const router = useRouter();
 
   // session verify
+  // useEffect(() => {
+  //   const token = cookies.get("auth");
+  //   if (!token) router.push("/gis/login");
+  //   const data = verifyGisAuth({ setCurrentUser, token });
+  //   if (!data || data === "error") router.push("/gis/login");
+  // }, []);
+
   useEffect(() => {
-    const token = cookies.get("auth");
-    if (!token) router.push("/gis/login");
-    const data = verifyGisAuth({ setCurrentUser, token });
+  const token = cookies.get("auth");
+  if (!token) return router.push("/gis/login");
+
+  const verify = async () => {
+    const data = await verifyGisAuth({ setCurrentUser, token });
     if (!data || data === "error") router.push("/gis/login");
-  }, []);
+  };
+
+  verify();
+}, []);
+
 
   useEffect(() => {
     if (!currentUser) return;
