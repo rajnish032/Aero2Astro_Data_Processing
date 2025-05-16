@@ -7,6 +7,10 @@ import Licenses from "./userSubSchemas/licenses.model.js";
 import WorkExp from "./userSubSchemas/workExp.model.js";
 import Project from "./userSubSchemas/projects.model.js";
 import EquipmentDetail from "./userSubSchemas/userequipmentDetail.model.js";
+
+
+import { v4 as uuidv4 } from "uuid";
+
 const phoneSchema = new Schema(
   {
     number: {
@@ -163,6 +167,9 @@ const userSchema = new Schema(
     uniqueId: {
       type: String,
       unique: true,
+
+      
+      default: () => uuidv4(),
     },
     isSuspended: {
       type: Boolean,
