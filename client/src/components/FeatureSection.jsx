@@ -11,7 +11,7 @@ const FeatureSection = ({ features }) => {
     <div className="bg-black text-white py-20 px-6 md:px-20">
       <h2 className="text-5xl md:text-6xl font-bold text-center text-white">
         <span className="inline-block font-medium bg-gradient-to-r py-1 mx-2 from-pink-900 to-blue-500 bg-clip-text text-transparent">
-                Why join Aero2Astro&apos;s Geospatial Network ?
+                Why join Aero2Astro&apos;s Geospatial Network?
               </span>
         
       </h2>
