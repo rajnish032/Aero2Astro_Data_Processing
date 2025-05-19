@@ -136,7 +136,7 @@ const AdminPanel = ({ children }) => {
                             </div>
                         </Link>
 
-                        <Link href="/admin/processing/all">
+                        {/* <Link href="/admin/processing/all">
                             <div className={`${isActive('/admin/processing/all')} flex p-2 gap-3 mt-5 items-center opacity-50 cursor-not-allowed rounded`}
                                 onClick={(e) => e.preventDefault()}>
                                 <VscServerProcess size={30} className="shadow-md rounded p-1 bg-white text-blue-500" />
@@ -156,7 +156,7 @@ const AdminPanel = ({ children }) => {
                                 <MdOutlineOnDeviceTraining size={30} className="shadow-md rounded p-1 bg-white text-blue-500" />
                                 <p>RPTO</p>
                             </div>
-                        </Link>
+                        </Link> */}
                         <button disabled={sendingMail} onClick={() => sendPendingUserEmail()}>
                             <div className={`${sendingMail?"cursor-not-allowed":"cursor-pointer"} flex p-2 gap-3 text-sm mt-5 items-center shadow hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-700 rounded`}>
                                 <IoNotifications size={30} className="shadow-md rounded p-1 bg-white text-blue-500" />
