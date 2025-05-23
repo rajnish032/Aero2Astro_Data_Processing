@@ -5,4 +5,4 @@ Disallow: /dashboard/
 Disallow: /api/
 Allow: /
 
-Sitemap: https://dronepilots.aero2astro.com/sitemap.xml
+Sitemap: https://aero2-astro-data-processing.vercel.app/sitemap.xml

@@ -597,7 +597,7 @@ export const handleEnablingEdit = asyncHandler(async (req, res) => {
                         To update your profile, click the button below:
                     </p>
                     <p>
-                        <a href="https://dronepilots.aero2astro.com/user/profile" class="button">Edit Your Profile</a>
+                        <a href="https://aero2-astro-data-processing.vercel.app/user/profile" class="button">Edit Your Profile</a>
                     </p>
                     <p>
                         If you have any questions or need assistance, feel free to contact us at <a href="mailto:flywithus@aero2astro.com">flywithus@aero2astro.com</a>.
@@ -922,7 +922,7 @@ export const handleDataVerified = asyncHandler(async (req, res) => {
             <p>
               Show your credibility, build your network, and unlock new opportunities by sharing your Aero2Astro profile.
             </p>
-            <a href="http://dronepilots.aero2astro.com/public/${existedUser?.uniqueId}" class="btn">Share Your Profile</a>
+            <a href="https://aero2-astro-data-processing.vercel.app/public/${existedUser?.uniqueId}" class="btn">Share Your Profile</a>
             <p style="margin-top: 20px;">
               If you have any questions or need assistance, feel free to reach out to us anytime at 
               <a href="mailto:flywithus@aero2astro.com">flywithus@aero2astro.com</a>.
@@ -1040,7 +1040,7 @@ export const sendEmails = asyncHandler(async (req, res) => {
           <p>Dear Gis,</p>
           <p>We noticed that you have registered but have not applied for approval.</p>
           <p>To complete your approval process, please click the button below:</p>
-          <a href="https://dronepilots.aero2astro.com/pilot/login" class="cta-button">Apply for Approval</a>
+          <a href="https://aero2-astro-data-processing.vercel.app/gis/login" class="cta-button">Apply for Approval</a>
           <p>If you have already applied, please disregard this message.</p>
           <p>Best regards,<br><strong>Aero2Astro Team</strong></p>
         </div>

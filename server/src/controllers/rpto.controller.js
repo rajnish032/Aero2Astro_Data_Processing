@@ -563,7 +563,7 @@ export const createUsersByRpto = async (req, res) => {
                   <p>
                     To complete your profile and apply for approval, please click the button below:
                   </p>
-                  <a href="https://dronepilots.aero2astro.com/user/profile" class="button">Complete Your Profile</a>
+                  <a href="https://aero2-astro-data-processing.vercel.app/user/profile" class="button">Complete Your Profile</a>
                   <p>If you have any questions, feel free to contact us at
                     <a href="mailto:flywithus@aero2astro.com">flywithus@aero2astro.com</a>.
                   </p>

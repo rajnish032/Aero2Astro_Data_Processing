@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://dronepilots.aero2astro.com', 
+    siteUrl: 'https://aero2-astro-data-processing.vercel.app', 
     generateRobotsTxt: true, 
     exclude: ['/admin/*', '/dashboard/*', '/pilot/*'], 
     changefreq: 'weekly', 

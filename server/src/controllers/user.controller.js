@@ -337,7 +337,7 @@ export const registerationConfirmationMail = asyncHandler(async (req, res) => {
             Please login to your dashboard and complete your profile and apply for approval, if already done then kindly ignore and wait for approval:
         </p>
         <p>
-            <a href="https://dronepilots.aero2astro.com/user/dashboard" class="button">Go to Dashboard</a>
+            <a href="https://aero2-astro-data-processing.vercel.app/user/dashboard" class="button">Go to Dashboard</a>
         </p>
         <p>
             If you have any questions or need assistance, feel free to contact our support team.
