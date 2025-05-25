@@ -37,13 +37,13 @@ const GisSideBar = () => {
         .replace(" ", "-")}`,
       icon: <FaRegFolder className="text-xl max-sm:text-sm" />,
     },
-    {
-      title: "Flight Records",
-      link: `/gis/logs/${currentUser?.fullName
-        .toLowerCase()
-        .replace(" ", "-")}`,
-      icon: <FaChartLine className="text-xl max-sm:text-sm" />,
-    },
+    // {
+    //   title: "Flight Records",
+    //   link: `/gis/logs/${currentUser?.fullName
+    //     .toLowerCase()
+    //     .replace(" ", "-")}`,
+    //   icon: <FaChartLine className="text-xl max-sm:text-sm" />,
+    // },
     {
       title: "Assets",
       link: `/gis/assets/${currentUser?.fullName

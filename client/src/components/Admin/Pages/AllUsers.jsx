@@ -67,7 +67,7 @@ const AllUsers = () => {
 
   return (
     <div className='md:p-5 py-5 relative'>
-      <h1 className='font-bold text-3xl text-center bg-white rounded-full shadow p-4 text-gray-600'>All Gis Pilots</h1>
+      <h1 className='font-bold text-3xl text-center bg-blue-400 rounded-full shadow p-4 text-gray-900'>All Gis Expert</h1>
 
       <div className='flex items-center justify-center gap-5 max-sm:text-sm lg:gap-8 flex-wrap my-10 md:my-4 md:p-4'>
         <StatWidget title={"Total Gis Pilots"} value={res?.stats.numberOfGis} icon={<TbDrone size={30} className='text-white' />} />

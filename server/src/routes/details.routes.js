@@ -15,19 +15,15 @@ import {
  getActivityLog,
  } from "../controllers/userDetail.controller.js";
 
-
 import verifyUserJwt from "../middlewares/verifyUserJwt.js";
 import upload from "../utils/multerconfig.js";
 import uploadAvatar from "../utils/multerForImg.js";
-import { handleGisApproval, verifyAdminAuth,handleGisRejection, handleGisSuspension, handleGisRevokeSuspension, sendEmails, handleEnablingEdit, inviteRPTO, getRptos, getRptoDetails, handleDataVerified } from "../controllers/admin.controller.js";
+import { handleGisApproval, verifyAdminAuth,handleGisRejection, handleGisSuspension, handleGisRevokeSuspension, sendEmails, handleEnablingEdit,  handleDataVerified } from "../controllers/admin.controller.js";
 import { getAllUsers, getUsersRegisteredToday } from "../controllers/userfetch.controller.js";
 import multer from "multer";
 import { updateAvatar } from "../controllers/user.controller.js";
-import { createUsersByRpto, getAllUsersByRPTO, getRptoDetail, registerRPTO, validateToken, verifyRptoAuth } from "../controllers/rpto.controller.js";
 import uploadXlsx from "../utils/multerForXlsx.js";
 const router = express.Router();
-
-
 
 const multerErrorHandler = (err, req, res, next) => {
   if (err instanceof multer.MulterError) {
@@ -77,17 +73,6 @@ router.put("/user/suspend/:id",verifyAdminAuth,handleGisSuspension);
 router.put("/user/resume/:id",verifyAdminAuth,handleGisRevokeSuspension);
 router.put("/user/verify/:id",verifyAdminAuth,handleDataVerified);
 router.post("/user/pending/mail",verifyAdminAuth,sendEmails)
-router.post("/rpto/inviteRPTO",verifyAdminAuth,inviteRPTO)
-router.get("/rpto/getRpto",verifyAdminAuth,getRptos)
-router.get("/admin/rpto/:id/users", verifyAdminAuth, getRptoDetails);
-
-
-// RPTO
-router.get("/user/rpto/all",verifyRptoAuth,getAllUsersByRPTO);
-router.post("/user/rpto/upload-users", uploadXlsx.single("file"),verifyRptoAuth,createUsersByRpto);
-router.post("/rpto/validate-token",validateToken);
-router.post("/rpto/register",registerRPTO);
-
 
 
 export default router; 

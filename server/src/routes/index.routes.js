@@ -25,20 +25,7 @@ import {
 } from "../controllers/admin.controller.js";
 import verifyUserJwt from "../middlewares/verifyUserJwt.js";
 import axios from "axios";
-import {
-  generateAndSendEmailOTPForRPTO,
-  generateAndSendPhoneOTPForRPTO,
-  getRptoDetail,
-  resendEmailOTPForRPTO,
-  resendPhoneOTPForRPTO,
-  rptoLogin,
-  rptoRegister,
-  rptoresetPassword,
-  rptoverifyResetPasswordOtp,
-  verifyEmailOTPForRPTO,
-  verifyPhoneOTPForRPTO,
-  verifyRptoAuth,
-} from "../controllers/rpto.controller.js";
+
 import sendEmail from "../service/sendMail.js";
 const router = express.Router();
 
@@ -65,18 +52,6 @@ router.post("/admin_login", Login);
 router.post("/verify/admin", verifyResetPasswordOtp);
 router.post("/reset/admin/password", resetPassword);
 
-// RPTO routes
-router.get("/rpto/detail", verifyRptoAuth, getRptoDetail);
-router.post("/rpto_login", rptoLogin);
-router.post("/verify/rpto", rptoverifyResetPasswordOtp);
-router.post("/reset/rpto/password", rptoresetPassword);
-router.post("/rpto/sendPhoneOTP", generateAndSendPhoneOTPForRPTO);
-router.post("/rpto/verifyPhone", verifyPhoneOTPForRPTO);
-router.post("/rpto/resendPhoneOTP", resendPhoneOTPForRPTO);
-router.post("/rpto/sendEmailOTP", generateAndSendEmailOTPForRPTO);
-router.post("/rpto/verifyEmail", verifyEmailOTPForRPTO);
-router.post("/rpto/resendEmail", resendEmailOTPForRPTO);
-router.post("/rpto/createAccount", rptoRegister);
 
 router.get("/pincode/:value", async (req, res) => {
   const { value } = req.params;

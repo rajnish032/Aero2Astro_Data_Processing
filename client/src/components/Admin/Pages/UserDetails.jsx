@@ -117,7 +117,7 @@ const UserDetails = ({ state }) => {
             }
 
         } catch (error) {
-            // console.log(error)
+            
             toast.dismiss(toastId)
             toast.error(error?.response?.data?.message || 'Something went wrong');
             setLoading(false)
@@ -451,47 +451,6 @@ const UserDetails = ({ state }) => {
                                     {state?.equipmentDetails ?
 
                                         <div className='text-sm grid md:gap-5 md:grid-cols-2'>
-                                            <div className='flex my-2 max-w-[500px] gap-5 items-center justify-between'>
-
-                                                <div className='font-semibold'>
-                                                    <p className='mb-2 text-gray-700'>Addons : </p>
-                                                    {
-                                                        state?.equipmentDetails?.addons?.length === 0 ? "- Not Available -" : (
-                                                            <div className='flex items-center flex-wrap gap-3 text-xs'>
-                                                                {
-                                                                    state?.equipmentDetails?.addons?.map((i, idx) => (
-                                                                        <p key={idx} className='border-blue-500 min-w-fit bg-gray-100 font-normal rounded p-1 px-2 border'>{i}</p>
-                                                                    ))
-                                                                }
-                                                            </div>
-                                                        )
-                                                    }
-                                                </div>
-
-
-
-                                            </div>
-                                            <div className='flex my-2 max-w-[500px] gap-5 items-center justify-between'>
-                                                <div className='font-semibold'>
-                                                    <p className='mb-3 text-gray-700'>Payloads </p>
-                                                    {
-                                                        state?.equipmentDetails?.payloads.length === 0 ? "- Not Available -" : (
-                                                            <div className='flex items-center flex-wrap gap-3 text-xs'>
-                                                                {
-                                                                    state?.equipmentDetails?.payloads?.map((i, idx) => (
-                                                                        <p key={idx} className='border-blue-500 min-w-fit bg-gray-100 font-normal rounded p-1 px-2 border'>{i}</p>
-                                                                    ))
-                                                                }
-                                                            </div>
-                                                        )
-                                                    }
-                                                </div>
-
-
-
-                                            </div>
-
-
                                         </div> : '-N/A'
 
                                     }
@@ -500,71 +459,6 @@ const UserDetails = ({ state }) => {
                                     {/* Projects */}
                                     <hr className='my-4' />
                                     <h3 className='text-sm font-semibold'>Projects Done :- {state?.projects?.projects.length === 0 || !state?.projects ? '- N/A -' : state?.projects?.projects.length}</h3>
-
-                                    <div className='text-sm '>
-
-
-                                        <div className='flex my-1 gap-5 items-center justify-between'>
-                                            <div className='font-semibold mt-3'>
-                                                <p className='mb-2 text-gray-700'>Mapping projects : </p>
-                                                {
-                                                    state?.projects?.mapping.length === 0 ? "- Not Available -" : (
-                                                        <div className='flex items-center flex-wrap gap-3 text-xs'>
-                                                            {
-                                                                state?.projects?.mapping?.map((i, idx) => (
-                                                                    <p key={idx} className='border-blue-500 min-w-fit bg-gray-100 font-normal rounded p-1 px-2 border'>{i}</p>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    )
-                                                }
-                                            </div>
-
-
-
-                                        </div>
-                                        <div className='flex my-1 gap-5 items-center justify-between'>
-                                            <div className='font-semibold mt-3'>
-                                                <p className='mb-2 text-gray-700'>Inspection projects : </p>
-                                                {
-                                                    state?.projects?.inspection.length === 0 ? "- Not Available -" : (
-                                                        <div className='flex items-center flex-wrap gap-3 text-xs'>
-                                                            {
-                                                                state?.projects?.inspection?.map((i, idx) => (
-                                                                    <p key={idx} className='border-blue-500 min-w-fit bg-gray-100 font-normal rounded p-1 px-2 border'>{i}</p>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    )
-                                                }
-                                            </div>
-
-
-
-                                        </div>
-                                        <div className='flex my-1 gap-5 items-center justify-between'>
-                                            <div className='font-semibold mt-3'>
-                                                <p className='mb-2 text-gray-700'>Monitoring projects : </p>
-                                                {
-                                                    state?.projects?.monitoring.length === 0 ? "- Not Available -" : (
-                                                        <div className='flex items-center flex-wrap gap-3 text-xs'>
-                                                            {
-                                                                state?.projects?.monitoring?.map((i, idx) => (
-                                                                    <p key={idx} className='border-blue-500 min-w-fit bg-gray-100 font-normal rounded p-1 px-2 border'>{i}</p>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    )
-                                                }
-                                            </div>
-
-
-
-                                        </div>
-
-
-                                    </div>
-
 
                                     {/* Projects End */}
 
@@ -597,25 +491,8 @@ const UserDetails = ({ state }) => {
 
 
                                         </div>
-                                        <div className='flex my-1 gap-5 items-center justify-between'>
-                                            <div className='font-semibold mt-3'>
-                                                <p className='mb-2 text-gray-700'>Control Stations : </p>
-                                                {
-                                                    state?.skills?.controlStations.length === 0 ? "- Not Available -" : (
-                                                        <div className='flex items-center flex-wrap gap-3 text-xs'>
-                                                            {
-                                                                state?.skills?.controlStations?.map((i, idx) => (
-                                                                    <p key={idx} className='border-blue-500 min-w-fit bg-gray-100 font-normal rounded p-1 px-2 border'>{i}</p>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    )
-                                                }
-                                            </div>
 
-
-
-                                        </div>
+                                        
 
 
                                         <div className='flex my-1 gap-5 items-center justify-between'>
@@ -712,58 +589,7 @@ const UserDetails = ({ state }) => {
                                             )
                                         }
 
-
-
                                     </div>
-                                    <h4 className=' text-xl font-semibold'>Equipments </h4>
-
-                                    <div className='text-sm grid md:gap-5 md:grid-cols-2'>
-                                        <div className='flex my-2 max-w-[500px] gap-5 items-center justify-between'>
-
-                                            <div className='font-semibold'>
-                                                <p className='mb-2 text-gray-700'>Addons : </p>
-                                                {
-                                                    state?.equipmentDetails?.addons.length === 0 ? "- Not Available -" : (
-                                                        <div className='flex items-center flex-wrap gap-3 text-xs'>
-                                                            {
-                                                                state?.equipmentDetails?.addons?.map((i, idx) => (
-                                                                    <p key={idx} className='border-blue-500 min-w-fit bg-gray-100 font-normal rounded p-1 px-2 border'>{i}</p>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    )
-                                                }
-                                            </div>
-
-
-
-                                        </div>
-
-
-                                        <div className='flex my-2 max-w-[500px] gap-5 items-center justify-between'>
-                                            <div className='font-semibold'>
-                                                <p className='mb-3 text-gray-700'>Payloads </p>
-                                                {
-                                                    state?.equipmentDetails?.payloads.length === 0 ? "- Not Available -" : (
-                                                        <div className='flex items-center flex-wrap gap-3 text-xs'>
-                                                            {
-                                                                state?.equipmentDetails?.payloads?.map((i, idx) => (
-                                                                    <p key={idx} className='border-blue-500 min-w-fit bg-gray-100 font-normal rounded p-1 px-2 border'>{i}</p>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    )
-                                                }
-                                            </div>
-
-
-
-                                        </div>
-
-
-                                    </div>
-
-
 
                                 </div>
                             }
@@ -936,7 +762,7 @@ const UserDetails = ({ state }) => {
                                                     }
                                                 </div>
 
-                                                <div className='text-sm '>
+                                                {/* <div className='text-sm '>
 
                                                     <h4 className='mt-10 text-xl font-semibold'>Project Areas</h4>
 
@@ -999,7 +825,7 @@ const UserDetails = ({ state }) => {
                                                     </div>
 
 
-                                                </div>
+                                                </div> */}
 
 
 

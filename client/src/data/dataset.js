@@ -13,13 +13,3 @@ export const equipmentName = [
     "Talon fixed wing",
 ]
 
-export const payloadList = [
-    "DJI",
-    "LI sensor",
-    "DJI",
-    "L2 sensor",
-    "DJI H20",
-    "DJI H20T",
-    "DJI H20N",
-    "DJI Pl"
-]

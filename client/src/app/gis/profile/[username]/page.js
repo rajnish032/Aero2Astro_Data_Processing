@@ -19,8 +19,6 @@ const GisProfilePage = () => {
 
                     <Profile  />
 
-
-
                 </div>
 
 

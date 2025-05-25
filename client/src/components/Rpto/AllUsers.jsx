@@ -16,7 +16,7 @@ const AllUsers = () => {
 
   return (
     <div className='md:p-5 py-5 relative'>
-      <h1 className='font-bold text-3xl text-center bg-white rounded-full shadow p-4 text-gray-600'>All Gis</h1>
+      <h1 className='font-bold text-3xl text-center bg-white rounded-full shadow p-4 text-gray-600'>All Gis Engineer</h1>
 
       {/* Stat Widgets */}
       <div className="flex items-center justify-center gap-5 md:gap-4 flex-wrap my-10 md:my-4 md:p-2">

@@ -108,41 +108,41 @@ export const areofprocessing = [
     "Uttarakhand",
     "West Bengal"
   ];
-  export const surveyMapping = [
-    "Lidar Mapping",
-    "Vertical Mapping",
-    "Linear mapping",
-    "Area Mapping",
-    "3D Area mapping",
-    "Asset Mapping",
+  // export const surveyMapping = [
+  //   "Lidar Mapping",
+  //   "Vertical Mapping",
+  //   "Linear mapping",
+  //   "Area Mapping",
+  //   "3D Area mapping",
+  //   "Asset Mapping",
   
-  ];
-  export const monitoring = [
-    "Linear videography",
-    "Area Videography",
-    "Construction Site progress",
-    "Solar plant",
-    "Wind Turbine",
-    "Electric Tower"
-    , "Cooling Towers", "Chimney", "Pipeline", "Bridge", "Flare Stack"
-  ];
-  export const visuals = [
-    "Building", "Solar", "Wind Turbine", "Electric Tower"
-    , "Cooling Towers", "Chimney", "Pipeline", "Bridge", "Flare Stack"
-  ]
+  // ];
+  // export const monitoring = [
+  //   "Linear videography",
+  //   "Area Videography",
+  //   "Construction Site progress",
+  //   "Solar plant",
+  //   "Wind Turbine",
+  //   "Electric Tower"
+  //   , "Cooling Towers", "Chimney", "Pipeline", "Bridge", "Flare Stack"
+  // ];
+  // export const visuals = [
+  //   "Building", "Solar", "Wind Turbine", "Electric Tower"
+  //   , "Cooling Towers", "Chimney", "Pipeline", "Bridge", "Flare Stack"
+  // ]
   
   
-  export const controlStations = [
-    "Pix 4D",
-    "DJI Ground Station Pro",
-    "DJI Pilot",
-    "Drone Deploy",
-    "DMO",
-    "Mission Planner",
-    "QGroundControl"
-    ,"UgCS",
-    "Hammer Mission"
-  ];
+  // export const controlStations = [
+  //   "Pix 4D",
+  //   "DJI Ground Station Pro",
+  //   "DJI Pilot",
+  //   "Drone Deploy",
+  //   "DMO",
+  //   "Mission Planner",
+  //   "QGroundControl"
+  //   ,"UgCS",
+  //   "Hammer Mission"
+  // ];
   
   export const equipmentTypes = [
     "GPS Receiver",
@@ -175,33 +175,33 @@ export const areofprocessing = [
     "YellowScan Mapper+",
   ];
   
-  export const payloadsList = [
-    "DJI L1 sensor",
-    "DJI L2 sensor",
-    "DJI H20",
-    "DJI H20T",
-    "DJI H20N",
-    "DJI P1",
-    "MicaSense RedEdge-MX",
-    "RIEGL miniVUX-1UAV",
-    "Phase One iXM 100",
-    "Sentera 6X"
+  // export const payloadsList = [
+  //   "DJI L1 sensor",
+  //   "DJI L2 sensor",
+  //   "DJI H20",
+  //   "DJI H20T",
+  //   "DJI H20N",
+  //   "DJI P1",
+  //   "MicaSense RedEdge-MX",
+  //   "RIEGL miniVUX-1UAV",
+  //   "Phase One iXM 100",
+  //   "Sentera 6X"
   
-  ];
+  // ];
   
-  export const addonsList = [
-    "Rtk",
-    "Ppk",
-    "DGI Base",
-    "UHF",
-    "LoRa",
-    "GCPs",
-    "Tripod Extenders",
-    "RCU",
-    "GPM",
-    "FDC",
-    "Survey Base",
-    "IMU",
-  ];
+  // export const addonsList = [
+  //   "Rtk",
+  //   "Ppk",
+  //   "DGI Base",
+  //   "UHF",
+  //   "LoRa",
+  //   "GCPs",
+  //   "Tripod Extenders",
+  //   "RCU",
+  //   "GPM",
+  //   "FDC",
+  //   "Survey Base",
+  //   "IMU",
+  // ];
   
   

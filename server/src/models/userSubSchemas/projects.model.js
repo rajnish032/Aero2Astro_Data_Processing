@@ -54,20 +54,6 @@ const projectSchema = new Schema({
         }
     }],
  
-    monitoring: [{
-        type: String,
-        required: true
-    }],
-    inspection: [{
-        type: String,
-        required: true
-    }],
-    mapping: [
-        {
-            type: String,
-            required: true
-        }
-    ],
 
 });
 

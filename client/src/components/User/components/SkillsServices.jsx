@@ -5,7 +5,7 @@ import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { UserContext } from "../../../Contexts/User";
-import { controlStations, equipmentTypes } from '../../../data/defaultList';
+import { equipmentTypes } from '../../../data/defaultList';
 import { requestUrl } from '../../../utils/constants';
 import HybridSelect from './commons/HybridSelect';
 import { InfoCircleOutlined } from '@ant-design/icons';
@@ -19,31 +19,43 @@ const SkillsServices = () => {
     const [saving, setSaving] = useState(false);
     const [disabled, setDisabled] = useState(false);
 
+    const [isEquipmentNAChecked, setIsEquipmentNAChecked] = useState(false);
     const [isHardwareNAChecked, setIsHardwareNAChecked] = useState(false);
     const [isSoftwareNAChecked, setIsSoftwareNAChecked] = useState(false);
 
     useEffect(() => {
         if (user && user.skills) {
-            const { hardwareSkills, softwareSkills } = user.skills;
+            const { equipmentTypesCanHandle, hardwareSkills, softwareSkills } = user.skills;
+            
+            if (equipmentTypesCanHandle?.includes('N/A')) {
+                setIsEquipmentNAChecked(true);
+                form.setFieldsValue({ equipmentTypesCanHandle: ['N/A'] });
+            } else {
+                form.setFieldsValue({ equipmentTypesCanHandle });
+            }
+
             if (hardwareSkills?.includes('N/A')) {
                 setIsHardwareNAChecked(true);
                 form.setFieldsValue({ hardwareSkills: ['N/A'] });
             } else {
                 form.setFieldsValue({ hardwareSkills });
             }
+
             if (softwareSkills?.includes('N/A')) {
                 setIsSoftwareNAChecked(true);
                 form.setFieldsValue({ softwareSkills: ['N/A'] });
             } else {
                 form.setFieldsValue({ softwareSkills });
             }
-            form.setFieldsValue(user.skills);
         }
     }, [user, form]);
 
     const handleCheckboxChange = (e, field) => {
         const checked = e.target.checked;
-        if (field === 'hardwareSkills') {
+        if (field === 'equipmentTypesCanHandle') {
+            setIsEquipmentNAChecked(checked);
+            form.setFieldsValue({ equipmentTypesCanHandle: checked ? ['N/A'] : [] });
+        } else if (field === 'hardwareSkills') {
             setIsHardwareNAChecked(checked);
             form.setFieldsValue({ hardwareSkills: checked ? ['N/A'] : [] });
         } else if (field === 'softwareSkills') {
@@ -58,10 +70,9 @@ const SkillsServices = () => {
             setLoading(true);
             const userAuth = cookies.get('auth');
             await axios.put(`${requestUrl}/user/details/update`, { skills: values }, {
-                headers:{
-                 Authorization:`Bearer ${userAuth}`
-                },
-                withCredentials: true });
+                headers:{ Authorization:`Bearer ${userAuth}` },
+                withCredentials: true
+            });
             setLoading(false);
             setSaving(false);
             setDisabled(true);
@@ -77,30 +88,35 @@ const SkillsServices = () => {
     return (
         <Form layout='vertical' form={form} onFinish={handleSubmit}>
             <div className='flex gap-5 flex-wrap items-center p-5'>
+
                 <Form.Item
-                    label="Equipments Types You can Handle"
+                    label={
+                        <div className='flex items-center gap-16 justify-between'>
+                            <p>Equipments Types You can Handle</p>
+                            <Checkbox
+                                disabled={disabled}
+                                onChange={(e) => handleCheckboxChange(e, 'equipmentTypesCanHandle')}
+                                checked={isEquipmentNAChecked}
+                            >
+                                N/A
+                            </Checkbox>
+                        </div>
+                    }
                     className='min-w-[250px]'
                     name="equipmentTypesCanHandle"
-                    rules={[{ required: true, message: 'Please select at least one gis equipment type' }]}
+                    rules={[{ required: !isEquipmentNAChecked, message: 'Select multiple or select only N/A' }]}
+                    tooltip={{
+                        title: 'Select N/A if you cannot handle any GIS equipment',
+                        icon: <InfoCircleOutlined />,
+                    }}
                 >
                     <HybridSelect
                         initialItems={equipmentTypes}
-                        disabled={disabled}
+                        disabled={disabled || isEquipmentNAChecked}
                         placeholder="Equipment Types You can Handle"
                     />
                 </Form.Item>
-                <Form.Item
-                    className='min-w-[250px]'
-                    label="Control Stations"
-                    name="controlStations"
-                    rules={[{ required: true, message: 'Please select at least one control station' }]}
-                >
-                    <HybridSelect
-                        initialItems={controlStations}
-                        disabled={disabled}
-                        placeholder="Control Stations"
-                    />
-                </Form.Item>
+
                 <Form.Item
                     className='min-w-[250px]'
                     label={(
@@ -128,11 +144,12 @@ const SkillsServices = () => {
                         placeholder="Hardware Skills"
                     />
                 </Form.Item>
+
                 <Form.Item
                     className='min-w-[250px]'
                     label={(
                         <div className='flex items-center gap-16 justify-between'>
-                            <p>Gis Software & Programming Skills</p>
+                            <p>GIS Software & Programming Skills</p>
                             <Checkbox
                                 disabled={disabled}
                                 onChange={(e) => handleCheckboxChange(e, 'softwareSkills')}
@@ -145,7 +162,7 @@ const SkillsServices = () => {
                     name="softwareSkills"
                     rules={[{ required: !isSoftwareNAChecked, message: 'Select Multiple or select only N/A' }]}
                     tooltip={{
-                        title: 'Select N/A if you have not any  gis software and programming skill',
+                        title: 'Select N/A if you have not any GIS software and programming skill',
                         icon: <InfoCircleOutlined />,
                     }}
                 >

@@ -167,8 +167,6 @@ const userSchema = new Schema(
     uniqueId: {
       type: String,
       unique: true,
-
-      
       default: () => uuidv4(),
     },
     isSuspended: {
@@ -178,7 +176,7 @@ const userSchema = new Schema(
     appliedTime: {
       type: Date,
     },
-    rpto: { type: Schema.Types.ObjectId, ref: "Rpto" },
+    
     bioSection: {
       hideBio: { type: Boolean, default:false },
       bio:{type:String,default:""},

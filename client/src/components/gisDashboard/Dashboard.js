@@ -5,7 +5,7 @@ import Skills from './Skills';
 import Equipments from './DashboardEquipments'
 import dynamic from 'next/dynamic';
 import WeatherCard from './WeatherCard';
-import FlightRecords from './FlightRecords';
+//import FlightRecords from './FlightRecords';
 import { verifyGisAuth } from '@/utils/verifyauth';
 import {useRouter} from 'next/navigation';
 
@@ -63,18 +63,8 @@ const Dashboard = () => {
       <div className='p-2 mb-4'>
         <Skills />
       </div>
-      <div className="grid lg:grid-cols-3 gap-5 p-2">
-        <div className="lg:col-span-2">
-          <FlightRecords className="max-h-44 h-full overflow-y-auto" />
-        </div>
-        <div className="lg:col-span-1 p-2">
-        <h2 className="text-lg flex items-center gap-2 border-b font-bold px-5 rounded-sm inset-x-0 py-1 text-gray-900 bg-gradient-to-r from-green-300 to-blue-600">
-               <FiMapPin /> Location
-            </h2>
-          <MapView className="h-full" />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-2">
+
+       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-2">
         {/* Equipments component should take full width on small screens and two-thirds width on larger screens */}
         <div className="lg:col-span-2 w-full">
           <Equipments isDashboard={true} />
@@ -84,6 +74,21 @@ const Dashboard = () => {
           <WeatherCard />
         </div>
       </div>
+
+      <div className="grid lg:grid-cols-3 gap-5 p-2">
+
+        {/* <div className="lg:col-span-2">
+          <FlightRecords className="max-h-44 h-full overflow-y-auto" />
+        </div> */}
+
+        <div className="lg:col-span-1 p-2">
+        <h2 className="text-lg flex items-center gap-2 border-b font-bold px-5 rounded-sm inset-x-0 py-1 text-gray-900 bg-gradient-to-r from-green-300 to-blue-600">
+               <FiMapPin /> Location
+            </h2>
+          <MapView className="h-full" />
+        </div>
+      </div>
+      
     </div>
   );
 };

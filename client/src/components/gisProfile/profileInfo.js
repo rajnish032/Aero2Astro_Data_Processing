@@ -24,7 +24,7 @@ import { verifyGisAuth } from "@/utils/verifyauth";
 import Cookies from "universal-cookie";
 import dayjs from "dayjs";
 import { Spinner } from "@nextui-org/react";
-import FlightDetails from "./FlightDetails";
+//import FlightDetails from "./FlightDetails";
 import UnavailabilityStatus from "./components/UnavailabilityStatus";
 const cookies = new Cookies(null, { path: "/" });
 
@@ -367,7 +367,7 @@ const ProfileInfo = ({ shareProfile }) => {
             {currentUser?.fullName || "User Name"}
           </h2>
           <h3 className="text-sm text-indigo-500">
-            {currentUser?.role === "Gis" ? "UAV Pilot" : currentUser?.role}
+            {currentUser?.role === "Gis" ? "GIS Expert" : currentUser?.role}
           </h3>
 
           {showDetails && (
@@ -447,7 +447,8 @@ const ProfileInfo = ({ shareProfile }) => {
         </div>
 
         
-        <FlightDetails allLogs={allLogs} />
+        {/* <FlightDetails allLogs={allLogs} /> */}
+
       </div>
 
       {/* Company Experience & Social Links */}

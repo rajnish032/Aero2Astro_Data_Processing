@@ -111,7 +111,7 @@ const ProfessionalDetails = () => {
             <Radio value="Employed">Employed with a Company</Radio>
           </Tooltip>
           <Tooltip title="Select this if you are self-employed as any gis equipment">
-            <Radio value="Self employed">Self Employed Gis Pilot</Radio>
+            <Radio value="Self employed">Self Employed Gis Engineer</Radio>
           </Tooltip>
           <Tooltip title="Select this if you are not currently employed">
             <Radio value="Not employed">Not Employed</Radio>
@@ -162,7 +162,7 @@ const ProfessionalDetails = () => {
                 ]}
                 className='px-5 min-w-[250px]'
               >
-                <Input placeholder='e.g. Equipment Gis Pilot' disabled={!editing} />
+                <Input placeholder='e.g. Equipment Gis Engineer' disabled={!editing} />
               </Form.Item>
             </>
           )}

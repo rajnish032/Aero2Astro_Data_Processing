@@ -4,7 +4,7 @@ import { addNewProject, deleteProj, getAllProj, getAllPublicProj } from "../cont
 import { addNewLog, deleteLog, getAllLog,fileupload, getPublicAllLog } from "../controllers/GisLogs.controllers.js";
 import { addNewBattery, addNewEquipment, addPayload, deleteEquipment, deleteBattery,  getAllAssets } from "../controllers/GisAssets.controller.js";
 import { addNewLink, deleteLink } from "../controllers/SocialLinks.controller.js";
-// import { addWorkExperience, deleteWorkExperience } from "../controllers/workExp.controllers.js";
+
 import { hideDetails, updateAvatar, updateBio, userLogin } from "../controllers/user.controller.js";
 import uploadAvatar from "../utils/multerForImg.js"
 import multer from "multer";

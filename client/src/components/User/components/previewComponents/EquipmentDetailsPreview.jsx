@@ -12,9 +12,7 @@ const EquipmentDetailsPreview = () => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         if (
-            user?.equipmentDetails?.equipments.length > 0 ||
-            user?.equipmentDetails?.addons[0] !== ("N/A" && undefined) ||
-            user?.equipmentDetails?.payloads[0] !== ("N/A" && undefined)
+            user?.equipmentDetails?.equipments.length > 0 
         ) {
             setIsDisabled(false);
             setSwitchChecked(false);

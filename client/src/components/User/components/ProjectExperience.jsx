@@ -8,7 +8,7 @@ import axios from 'axios';
 import { requestUrl } from "../../../utils/constants";
 import toast from "react-hot-toast";
 import HybridSelect from "./commons/HybridSelect";
-import { monitoring, surveyMapping, visuals } from "../../../data/defaultList";
+//import { monitoring, surveyMapping, visuals } from "../../../data/defaultList";
 import ProjectsCards from "./commons/ProjectsCards";
 import Cookies from 'universal-cookie';
 const cookies = new Cookies(null, { path: '/', sameSite: 'lax' });
@@ -281,44 +281,7 @@ const ProjectExperience = () => {
             </div>
 
             <Form layout="vertical" form={form} onFinish={handleProjectDropdownSubmit}>
-                <div className='flex  gap-5 flex-wrap items-center p-5'>
-                    <Form.Item
-                        className="w-[250px] m-0"
-                        label="Survey/Mapping"
-                        name="mapping"
-                        rules={[{ required: true, message: 'Please select at least one survey/mapping skill' }]}
-                    >
-                        <HybridSelect
-                            initialItems={surveyMapping}
-                            disabled={!editing}
-                            placeholder="3d/Mapping"
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        className="w-[250px] m-0"
-                        label="Monitoring"
-                        name="monitoring"
-                        rules={[{ required: true, message: 'Please select at least one monitoring skill' }]}
-                    >
-                        <HybridSelect
-                            initialItems={monitoring}
-                            disabled={!editing}
-                            placeholder="Monitoring"
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        className="w-[250px] m-0"
-                        label="Inspection - Visual/Thermal"
-                        name="inspection"
-                        rules={[{ required: true, message: 'Please select at least one inspection skill' }]}
-                    >
-                        <HybridSelect
-                            initialItems={visuals}
-                            disabled={!editing}
-                            placeholder="Visual/Thermal"
-                        />
-                    </Form.Item>
-                </div>
+                
                 <div className="flex gap-5">
                     <Button
                         disabled={!editing || loading}

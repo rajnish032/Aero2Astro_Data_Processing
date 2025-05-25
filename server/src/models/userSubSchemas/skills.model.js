@@ -6,15 +6,10 @@ const skillsSchema = new Schema({
     equipmentTypesCanHandle: [
         {
             type: String,
-            required: true
+            
         }
     ],
-    controlStations:[
-        {
-            type: String,
-            required: true
-        }
-    ],
+    
     hardwareSkills: [
         {
             type: String,
