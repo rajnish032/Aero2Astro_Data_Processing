@@ -280,7 +280,7 @@ const ProjectExperience = () => {
                 )}
             </div>
 
-            <Form layout="vertical" form={form} onFinish={handleProjectDropdownSubmit}>
+            {/* <Form layout="vertical" form={form} onFinish={handleProjectDropdownSubmit}>
                 
                 <div className="flex gap-5">
                     <Button
@@ -296,7 +296,7 @@ const ProjectExperience = () => {
                         <Button className="font-bold w-[100px] mx-3 my-2" onClick={handleEditToggle}>Edit</Button>
                     )}
                 </div>
-            </Form>
+            </Form> */}
 
             <div className="mt-8 ">
                 <ProjectsCards />
