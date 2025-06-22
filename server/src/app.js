@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import gisRouter from "./routes/gis.routes.js";
 import router from "./routes/index.routes.js";
+import jobRoutes from "./routes/jobs.route.js"
 import detailRouter from "./routes/details.routes.js";
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(cookieParser());
 app.use("/api/gis", gisRouter);
 app.use("/api", router);
 app.use("/api", detailRouter);
+app.use('/api/jobs', jobRoutes);
 
 // Default route
 app.get("/", (req, res) => {
