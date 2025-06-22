@@ -101,7 +101,7 @@ export default function ScrapeJobs() {
       )}
 
       {loading ? (
-        <p className="text-center text-gray-500">Loading...</p>
+        <p className="text-center text-gray-500">Loading...wait few minutes</p>
       ) : jobs.length === 0 ? (
         <p className="text-center text-gray-500">No jobs found try different location.</p>
       ) : (
