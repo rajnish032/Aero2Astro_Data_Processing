@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { requestUrl } from "../../utils/constants.js";
+import ShimmerJobs from '../ShimmerJobs.jsx';
+
+
 export default function ScrapeJobs() {
   const [query, setQuery] = useState('Geospatial, Drone Pilot, Gis Data Processing');
   const [location, setLocation] = useState('India');
@@ -46,62 +49,40 @@ export default function ScrapeJobs() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+    <div className="min-h-screen bg-gray-100 p-3">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Enter job role"
-          className="p-2 border border-gray-300 rounded w-60"
+          placeholder="Enter job role..."
+          className="flex items-center border border-gray-300 rounded-full px-4 py-2 w-full max-w-md bg-white shadow-sm"
         />
         <input
           type="text"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           placeholder="Location"
-          className="p-2 border border-gray-300 rounded w-60"
+          className="flex items-center border border-gray-300 rounded-full px-4 py-2 w-full max-w-md bg-white shadow-sm"
         />
         <button
           onClick={fetchScrapedJobs}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="text-white bg-blue-600 hover:bg-blue-700 px-4 py-1 rounded-full transition"
         >
-          {loading ? 'Scraping...' : 'Search & Scrape'}
+          {loading ? 'Searching...' : 'Search'}
         </button>
         <button
           onClick={fetchSavedJobs}
-          className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+          className="text-white bg-green-600 hover:bg-green-700 px-4 py-1 rounded-full transition"
         >
-          View Jobs
+          View More Jobs
         </button>
       </div>
 
-      {Object.keys(sources).length > 0 && (
-        <div className="text-center text-sm mb-4 text-gray-600">
-          <p>Fetched from:</p>
-          <div className="flex justify-center gap-4 mt-2">
-            {['indeed', 'naukri', 'linkedin'].map((source) => (
-              <span key={source} className="flex flex-col">
-                <span
-                  className={`font-medium ${
-                    sources[source]?.status === 'Success'
-                      ? 'text-green-600'
-                      : 'text-red-600'
-                  }`}
-                >
-                  {source.charAt(0).toUpperCase() + source.slice(1)}: {sources[source]?.status || 'N/A'} ({sources[source]?.count || 0} jobs)
-                </span>
-                {sources[source]?.error && (
-                  <span className="text-xs text-red-500">{sources[source].error}</span>
-                )}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-
       {loading ? (
-        <p className="text-center text-gray-500">Loading...wait few minutes</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[...Array(6)].map((_, i) => <ShimmerJobs key={i} />)}
+        </div>
       ) : jobs.length === 0 ? (
         <p className="text-center text-gray-500">No jobs found try different location.</p>
       ) : (
